@@ -1,26 +1,16 @@
-#header
-  +grid-row
-
-.headerbox
-  +grid-column($total-columns, true)
-
-.headertext
-  +grid-column(11)
-
-.headerlogo
-  +grid-column(2, true)
-
 #wrapper
   +grid-row
 
-#left
-  +grid-column(3)
+.header
+  +grid-row(nest)
+  &.index > .logo
+    +grid-column(4, true, true)
 
 #content
-  +grid-column(5)
+  +grid-row(nest)
 
-#right
-  +grid-column(5, true)
+.adressblock
+  +grid-column(6)
 
 .footer
   +grid-row
