@@ -1,4 +1,4 @@
-<div id="slides">
+<div class="slides">
 	<?php
 //	$dir = 'data/uploads/slides/'.get_page_slug(false).'/';
 	$dir = 'data/uploads/slides/';

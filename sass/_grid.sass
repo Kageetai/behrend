@@ -2,7 +2,7 @@
   +grid-row
 
 .header,
-.contentrow,
+.mainrow,
 .footer
   +grid-row(nest)
   margin-bottom: emCalc(16px)
@@ -12,11 +12,17 @@
     +grid-column(4, true, true)
     position: relative
 
-.contentcolumn
+.gallerycolumn
   +grid-column($total-columns, true)
 
-.addressblock
+.addresscolumn
   +grid-column(6)
+
+.contactcolumn
+  +grid-column(4)
+
+.contentcolumn
+  +grid-column(8)
 
 .webmaster
   +grid-column($total-columns, true)

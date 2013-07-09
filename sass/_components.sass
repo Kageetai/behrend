@@ -8,14 +8,22 @@
 .logo
   padding: 0.5em
   padding-left: emCalc(70px)
-  background-color: orange
+  background-color: $primary-color
   color: white
-  font-size: emCalc(18px)
 
 .address,
 .gallery,
-#slides
+.openingtimes,
+.contact,
+.slides,
+.main
   background-color: darkgray
+
+.openingtimes,
+.contact,
+.main
+  padding: 1em
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
 
 .address
   padding: 0.5em
@@ -24,10 +32,12 @@
   cursor: pointer
 
 .gallery,
-#slides
+.slides
   height: emCalc(260px)
   overflow: hidden
   padding: emCalc(5px) 0
+  &:after
+    clear: both
 
 .slide,
 .slide > img
@@ -36,9 +46,6 @@
 
 #wrapper
   margin-top: 1em
-
-.content
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
 
 .webmaster
   margin: 1em 0

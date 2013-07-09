@@ -1,7 +1,7 @@
-Overhage
+Behrend
 ========
 
-[GetSimple CMS](http://get-simple.info/) Theme for local paint company
+[GetSimple CMS](http://get-simple.info/) Theme for local dentist
 
 Frameworks
 ----------
