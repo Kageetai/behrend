@@ -13,7 +13,8 @@
   font-size: emCalc(18px)
 
 .address,
-.gallery
+.gallery,
+#slides
   background-color: darkgray
 
 .address
@@ -22,26 +23,21 @@
   font-size: emCalc(24px)
   cursor: pointer
 
-.gallery
-  height: emCalc(250px)
+.gallery,
+#slides
+  height: emCalc(260px)
+  overflow: hidden
+  padding: emCalc(5px) 0
 
-#nav
-  margin: 0
-  a
-    +button($button-med, $primary-color, 5px, true)
-  &.active a,
-  &.current a
-    background-color: darken($primary-color, 10%)
+.slide,
+.slide > img
+  max-height: emCalc(250px)
+  float: left
 
 #wrapper
   margin-top: 1em
 
-#right,
-#slides,
-.slide
-  height: emCalc(500px)
-
-#content
+.content
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
 
 .webmaster

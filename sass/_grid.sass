@@ -1,23 +1,22 @@
 #wrapper
   +grid-row
 
-.header
+.header,
+.contentrow,
+.footer
   +grid-row(nest)
+  margin-bottom: emCalc(16px)
+
+.header
   &.index > .logoblock
     +grid-column(4, true, true)
     position: relative
 
 .contentcolumn
-  +grid-row(nest)
+  +grid-column($total-columns, true)
 
 .addressblock
   +grid-column(6)
-
-.gallery
-  +grid-column($total-columns, true)
-
-.footer
-  +grid-row
 
 .webmaster
   +grid-column($total-columns, true)

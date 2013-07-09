@@ -29,26 +29,30 @@
         </div>
     </div>
 
-    <section class="contentcolumn">
-        <div class="addressblock">
-            <div class="address">
-                <?php get_component('adress1'); ?>
+    <section class="content">
+        <div class="contentrow">
+            <div class="addressblock">
+                <div class="address">
+                    <?php get_component('adress1'); ?>
+                </div>
             </div>
-        </div>
-        <div class="addressblock">
-            <div class="address">
-                <?php get_component('adress2'); ?>
+            <div class="addressblock">
+                <div class="address">
+                    <?php get_component('adress2'); ?>
+                </div>
+            </div>
+            <div class='contentcolumn'>
+                    <?php include('slides.inc.php'); ?>
             </div>
         </div>
     </section>
 
-    <?php get_footer(); ?>
-
+    <div class="footer">
+        <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
+    </div>
 </div>
 
-<div class="footer">
-    <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
-</div>
+<?php get_footer(); ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery-1.9.1.min.js"></script>-->
@@ -69,14 +73,15 @@
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        $("#content").append("<div class='gallery' ></div>");
+        $(".contentcolumn").hide();
+//        $(".content").append("<div class='contentcolumn'><div class='gallery' ></div></div>");
 
         $(".address").click(function () {
             var url = "/team";
             var duration = 700;
 
             $(".addressblock").remove();
-            $("#content").append("<div class='gallery' /></div>");
+            $(".contentcolumn").show();
 
             $(".logoblock").animate({
                 marginLeft: '0'
@@ -90,6 +95,7 @@
             // simulate user clicking link
 //            window.location.href = url;
         });
+        $(".address").click();
     });
 </script>
 
