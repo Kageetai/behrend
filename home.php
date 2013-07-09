@@ -29,23 +29,45 @@
         </div>
     </div>
 
-    <section class="content">
-        <div class="contentrow">
-            <div class="addressblock">
+<!--    <section class="content">-->
+        <section class="mainrow">
+            <div class="addresscolumn">
                 <div class="address">
-                    <?php get_component('adress1'); ?>
+                    <?php get_component('address1'); ?>
                 </div>
             </div>
-            <div class="addressblock">
+            <div class="addresscolumn">
                 <div class="address">
-                    <?php get_component('adress2'); ?>
+                    <?php get_component('address2'); ?>
                 </div>
             </div>
-            <div class='contentcolumn'>
-                    <?php include('slides.inc.php'); ?>
+
+
+
+        </section>
+
+        <section class="mainrow">
+            <div class='gallerycolumn'>
+                <?php include('slides.inc.php'); ?>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="mainrow">
+            <div class="contactcolumn">
+                <div class="openingtimes">
+                    <?php get_component('sprechzeiten'); ?>
+                </div>
+                <div class="contact">
+                    <?php get_component('contact'); ?>
+                </div>
+            </div>
+            <div class="contentcolumn">
+                <div class="content">
+                    <?php get_page_content(); ?>
+                </div>
+            </div>
+        </section>
+<!--    </section>-->
 
     <div class="footer">
         <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
@@ -73,15 +95,14 @@
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        $(".contentcolumn").hide();
-//        $(".content").append("<div class='contentcolumn'><div class='gallery' ></div></div>");
+//        $(".contentcolumn").hide();
 
         $(".address").click(function () {
             var url = "/team";
             var duration = 700;
 
             $(".addressblock").remove();
-            $(".contentcolumn").show();
+//            $(".contentcolumn").slideDown(duration);
 
             $(".logoblock").animate({
                 marginLeft: '0'
@@ -95,7 +116,7 @@
             // simulate user clicking link
 //            window.location.href = url;
         });
-        $(".address").click();
+//        $(".address").click();
     });
 </script>
 
