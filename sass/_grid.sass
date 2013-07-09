@@ -3,14 +3,18 @@
 
 .header
   +grid-row(nest)
-  &.index > .logo
+  &.index > .logoblock
     +grid-column(4, true, true)
+    position: relative
 
 #content
   +grid-row(nest)
 
-.adressblock
+.addressblock
   +grid-column(6)
+
+.gallery
+  +grid-column($total-columns, true)
 
 .footer
   +grid-row

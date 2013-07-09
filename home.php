@@ -1,8 +1,12 @@
-<?php if (!defined('IN_GS')) { die('you cannot load this page directly.'); } ?>
+<?php if (!defined('IN_GS')) {
+    die('you cannot load this page directly.');
+} ?>
 
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
     <title><?php get_site_name(); ?> - <?php get_page_clean_title(); ?></title>
@@ -10,7 +14,8 @@
     <meta name="robots" content="index, follow"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link href="<?php get_theme_url(); ?>/css/app.css" media="screen, projector, print" rel="stylesheet" type="text/css"/>
+    <link href="<?php get_theme_url(); ?>/css/app.css" media="screen, projector, print" rel="stylesheet"
+          type="text/css"/>
     <script src="<?php get_theme_url(); ?>/js/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -19,15 +24,21 @@
 <div id="wrapper">
 
     <div class="header index">
-        <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+        <div class="logoblock">
+            <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+        </div>
     </div>
 
     <section id="content">
-        <div class="adressblock">
-            <?php get_component('adress2'); ?>
+        <div class="addressblock">
+            <div class="address">
+                <?php get_component('adress1'); ?>
+            </div>
         </div>
-        <div class="adressblock">
-            <?php get_component('adress1'); ?>
+        <div class="addressblock">
+            <div class="address">
+                <?php get_component('adress2'); ?>
+            </div>
         </div>
     </section>
 
@@ -56,19 +67,31 @@
 <!--<script src="js/foundation/foundation.tooltips.js"></script>-->
 <!--<script src="js/foundation/foundation.topbar.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
-<!--<script>-->
-<!--    $(document).foundation();-->
-<!--//    $('.headerlogo').click(function() {-->
-<!--//        $('.headertext').toggleClass('clicked');-->
-<!--//        $('.headertext > p').fadeToggle();-->
-<!--    $('#slides').cycle({-->
-<!--        fit: 1,-->
-<!--        nowrap: 1,-->
-<!--        random: 1,-->
-<!--        speed: 5000,-->
-<!--        timeout: 5000-->
-<!--    });-->
-<!--</script>-->
+<script>
+    $(function () {
+        $("#content").append("<div class='gallery' ></div>");
+
+        $(".address").click(function () {
+            var url = "/team";
+            var duration = 700;
+
+            $(".addressblock").remove();
+            $(".content").append("<div class='.gallery' />");
+
+            $(".logoblock").animate({
+                marginLeft: '0'
+            }, duration, function() {
+                window.location.href = url;
+            });
+
+            // doesn't put this link in the browser history
+//            $(location).attr('href', url);
+
+            // simulate user clicking link
+//            window.location.href = url;
+        });
+    });
+</script>
 
 </body>
 </html>
