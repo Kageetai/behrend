@@ -81,13 +81,13 @@
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
+        $(".navcolumn").hide();
         $(".address").click(function () {
             var url = "/team";
             var duration = 1000;
 
             $(".addresscolumn").remove();
             $(".header").removeClass("index");
-//            $(".contentcolumn").slideDown(duration);
 
             $(".logoblock").animate({
                 marginLeft: '0',
@@ -95,6 +95,9 @@
             }, duration, function() {
 //                window.location.href = url;
             });
+            $(".navcolumn").show().children().animate({
+                width: '24.4%'
+            }, duration);
 
             // doesn't put this link in the browser history
 //            $(location).attr('href', url);

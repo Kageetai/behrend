@@ -1,14 +1,17 @@
 //#header
 //  height: emCalc(100px)
 
-#header,
-#nav
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+.header
+  height: emCalc(75px)
+
+.logoblock
+  height: 100%
 
 .logo
+  height: 100%
   padding: 0.5em
   padding-left: emCalc(70px)
-  margin-bottom: 0
+  margin: 0
   background-color: $primary-color
   color: white
 
@@ -20,14 +23,22 @@
 .content
   background-color: darkgray
 
-.navcolumn > li
-  display: inline-block
+.navcolumn
+  margin: 0
+  height: 100%
+  & > li
+    display: inline-block
+    background-color: #d30e62
+    height: 100%
+    text-align: center
+    vertical-align: middle
+    a
+      color: white
 
 .openingtimes,
 .contact,
 .content
   padding: 1em
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
 
 .address
   padding: 0.5em
