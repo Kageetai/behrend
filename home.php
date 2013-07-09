@@ -23,55 +23,54 @@
 
 <div id="wrapper">
 
-    <div class="header index">
+    <section class="header index">
         <div class="logoblock">
             <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
         </div>
-    </div>
 
-<!--    <section class="content">-->
-        <section class="mainrow">
-            <div class="addresscolumn">
-                <div class="address">
-                    <?php get_component('address1'); ?>
-                </div>
+        <ul class="navcolumn">
+            <?php get_navigation(true); ?>
+        </ul>
+    </section>
+
+    <section class="mainrow">
+        <div class="addresscolumn">
+            <div class="address">
+                <?php get_component('address1'); ?>
             </div>
-            <div class="addresscolumn">
-                <div class="address">
-                    <?php get_component('address2'); ?>
-                </div>
+        </div>
+        <div class="addresscolumn">
+            <div class="address">
+                <?php get_component('address2'); ?>
             </div>
+        </div>
+    </section>
 
+    <section class="mainrow">
+        <div class='gallerycolumn'>
+            <?php include('slides.inc.php'); ?>
+        </div>
+    </section>
 
-
-        </section>
-
-        <section class="mainrow">
-            <div class='gallerycolumn'>
-                <?php include('slides.inc.php'); ?>
+    <section class="mainrow">
+        <div class="contactcolumn">
+            <div class="openingtimes">
+                <?php get_component('sprechzeiten'); ?>
             </div>
-        </section>
-
-        <section class="mainrow">
-            <div class="contactcolumn">
-                <div class="openingtimes">
-                    <?php get_component('sprechzeiten'); ?>
-                </div>
-                <div class="contact">
-                    <?php get_component('contact'); ?>
-                </div>
+            <div class="contact">
+                <?php get_component('contact'); ?>
             </div>
-            <div class="contentcolumn">
-                <div class="content">
-                    <?php get_page_content(); ?>
-                </div>
+        </div>
+        <div class="contentcolumn">
+            <div class="content">
+                <?php get_page_content(); ?>
             </div>
-        </section>
-<!--    </section>-->
+        </div>
+    </section>
 
-    <div class="footer">
+    <section class="footer">
         <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
-    </div>
+    </section>
 </div>
 
 <?php get_footer(); ?>
@@ -79,33 +78,20 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery-1.9.1.min.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
-<!--<script src="js/foundation/foundation.alerts.js"></script>-->
-<!--<script src="js/foundation/foundation.clearing.js"></script>-->
-<!--<script src="js/foundation/foundation.cookie.js"></script>-->
-<!--<script src="js/foundation/foundation.dropdown.js"></script>-->
-<!--<script src="js/foundation/foundation.forms.js"></script>-->
-<!--<script src="js/foundation/foundation.joyride.js"></script>-->
-<!--<script src="js/foundation/foundation.magellan.js"></script>-->
-<!--<script src="js/foundation/foundation.orbit.js"></script>-->
-<!--<script src="js/foundation/foundation.placeholder.js"></script>-->
-<!--<script src="js/foundation/foundation.reveal.js"></script>-->
-<!--<script src="js/foundation/foundation.section.js"></script>-->
-<!--<script src="js/foundation/foundation.tooltips.js"></script>-->
-<!--<script src="js/foundation/foundation.topbar.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-//        $(".contentcolumn").hide();
-
         $(".address").click(function () {
             var url = "/team";
-            var duration = 700;
+            var duration = 1000;
 
-            $(".addressblock").remove();
+            $(".addresscolumn").remove();
+            $(".header").removeClass("index");
 //            $(".contentcolumn").slideDown(duration);
 
             $(".logoblock").animate({
-                marginLeft: '0'
+                marginLeft: '0',
+                marginRight: '0'
             }, duration, function() {
 //                window.location.href = url;
             });
@@ -116,7 +102,6 @@
             // simulate user clicking link
 //            window.location.href = url;
         });
-//        $(".address").click();
     });
 </script>
 

@@ -8,9 +8,12 @@
   margin-bottom: emCalc(16px)
 
 .header
+  & > .logoblock
+    +grid-column(4)
+    //transition: margin 1s
   &.index > .logoblock
     +grid-column(4, true, true)
-    position: relative
+    //transition: margin 1s
 
 .gallerycolumn
   +grid-column($total-columns, true)
@@ -22,6 +25,9 @@
   +grid-column(4)
 
 .contentcolumn
+  +grid-column(8)
+
+.navcolumn
   +grid-column(8)
 
 .webmaster
