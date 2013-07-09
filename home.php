@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <section id="content">
+    <section class="contentcolumn">
         <div class="addressblock">
             <div class="address">
                 <?php get_component('adress1'); ?>
@@ -76,12 +76,12 @@
             var duration = 700;
 
             $(".addressblock").remove();
-            $(".content").append("<div class='.gallery' />");
+            $("#content").append("<div class='gallery' /></div>");
 
             $(".logoblock").animate({
                 marginLeft: '0'
             }, duration, function() {
-                window.location.href = url;
+//                window.location.href = url;
             });
 
             // doesn't put this link in the browser history
