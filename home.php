@@ -4,9 +4,9 @@
 
 <!DOCTYPE html>
 <!--[if IE 8]>
-<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<html class="no-js lt-ie9" lang="de"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="de"> <!--<![endif]-->
 
 <head>
     <title><?php get_site_name(); ?> - <?php get_page_clean_title(); ?></title>
@@ -33,7 +33,7 @@
         </ul>
     </section>
 
-    <section class="mainrow">
+    <section class="mainrow addr">
         <div class="addresscolumn">
             <div class="address">
                 <?php get_component('address1'); ?>
@@ -46,13 +46,13 @@
         </div>
     </section>
 
-    <section class="mainrow">
+    <section class="mainrow sdl">
         <div class='gallerycolumn'>
             <?php include('slides.inc.php'); ?>
         </div>
     </section>
 
-    <section class="mainrow">
+    <section class="mainrow cnt">
         <div class="contactcolumn">
             <div class="openingtimes">
                 <?php get_component('sprechzeiten'); ?>
@@ -75,18 +75,21 @@
 
 <?php get_footer(); ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery-1.9.1.min.js"></script>-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
 <script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
-<script src="<?php get_theme_url(); ?>/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>-->
 <script>
     $(function () {
+        $(".mainrow").hide();
+        $(".mainrow.addr").show();
         $(".navcolumn").hide();
         $(".address").click(function () {
             var url = "/team";
             var duration = 1000;
 
-            $(".addresscolumn").remove();
+//            $(".addresscolumn").remove();
+            $(".mainrow.addr").remove();
             $(".header").removeClass("index");
 
             $(".logoblock").animate({
@@ -95,9 +98,12 @@
             }, duration, function() {
 //                window.location.href = url;
             });
+
             $(".navcolumn").show().children().animate({
-                width: '24.4%'
+                width: '24.2%'
             }, duration);
+
+            $(".sdl, .cnt").slideDown(duration);
 
             // doesn't put this link in the browser history
 //            $(location).attr('href', url);
