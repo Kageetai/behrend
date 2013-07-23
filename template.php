@@ -33,19 +33,6 @@
         </ul>
     </section>
 
-    <section class="mainrow addr">
-        <div class="addresscolumn">
-            <div class="address">
-                <?php get_component('address1'); ?>
-            </div>
-        </div>
-        <div class="addresscolumn">
-            <div class="address">
-                <?php get_component('address2'); ?>
-            </div>
-        </div>
-    </section>
-
     <section class="mainrow sdl">
         <div class='gallerycolumn'>
             <?php include('slides.inc.php'); ?>
