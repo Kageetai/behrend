@@ -35,14 +35,14 @@
 
     <section class="mainrow addr">
         <div class="addresscolumn">
-            <div class="address">
+            <a class="address" href="<?php get_site_url(); ?>team-moabit">
                 <?php get_component('address1'); ?>
-            </div>
+            </a>
         </div>
         <div class="addresscolumn">
-            <div class="address">
+            <a class="address" href="<?php get_site_url(); ?>team-moabit">
                 <?php get_component('address2'); ?>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -62,9 +62,9 @@
             </div>
         </div>
         <div class="contentcolumn">
-            <div class="content">
-                <?php get_page_content(); ?>
-            </div>
+<!--            <div class="content">-->
+                <?php //get_page_content(); ?>
+<!--            </div>-->
         </div>
     </section>
 
@@ -84,8 +84,10 @@
         $(".mainrow").hide();
         $(".mainrow.addr").show();
         $(".navcolumn").hide();
-        $(".address").click(function () {
-            var url = "<?php get_site_url(); ?>team";
+        $(".address").click(function (e) {
+            e.preventDefault();
+            // var url = "<?php // get_site_url(); ?>team";
+            var url = this.href;
             var duration = 1000;
 
             $(".mainrow.addr").remove();
@@ -95,14 +97,16 @@
                 marginLeft: '0',
                 marginRight: '0'
             }, duration, function() {
-                window.location.href = url;
+//                window.location.href = url;
+            });
+
+            $(".contentcolumn").load(url + " .content", function() {
+                $(".sdl, .cnt").slideDown(duration);
             });
 
             $(".navcolumn").show().children().animate({
                 width: '24.2%'
             }, duration);
-
-            $(".sdl, .cnt").slideDown(duration);
 
             // doesn't put this link in the browser history
 //            $(location).attr('href', url);

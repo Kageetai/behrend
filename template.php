@@ -66,6 +66,12 @@
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
 <script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
 <!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>-->
-
+<script>
+    $(function () {
+        $(".navcolumn").show().children().css({
+            width: '24.2%'
+        });
+    });
+</script>
 </body>
 </html>
