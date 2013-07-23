@@ -85,10 +85,9 @@
         $(".mainrow.addr").show();
         $(".navcolumn").hide();
         $(".address").click(function () {
-            var url = "/team";
+            var url = "<?php get_site_url(); ?>team";
             var duration = 1000;
 
-//            $(".addresscolumn").remove();
             $(".mainrow.addr").remove();
             $(".header").removeClass("index");
 
@@ -96,7 +95,7 @@
                 marginLeft: '0',
                 marginRight: '0'
             }, duration, function() {
-//                window.location.href = url;
+                window.location.href = url;
             });
 
             $(".navcolumn").show().children().animate({
