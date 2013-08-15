@@ -25,23 +25,25 @@
 
     <section class="header index">
         <div class="logoblock">
-            <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+            <a href="<?php get_site_url(); ?>">
+                <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+            </a>
         </div>
 
         <ul class="navcolumn">
-            <?php get_navigation(true); ?>
+            <?php go_child_menu(); ?>
         </ul>
     </section>
 
     <section class="mainrow addr">
         <div class="addresscolumn">
             <a class="address" href="<?php get_site_url(); ?>team-moabit">
-                <?php get_component('address1'); ?>
+                <?php get_component('address-moabit'); ?>
             </a>
         </div>
         <div class="addresscolumn">
-            <a class="address" href="<?php get_site_url(); ?>team-moabit">
-                <?php get_component('address2'); ?>
+            <a class="address" href="<?php get_site_url(); ?>team-lorem">
+                <?php get_component('address-lorem'); ?>
             </a>
         </div>
     </section>
@@ -97,7 +99,7 @@
                 marginLeft: '0',
                 marginRight: '0'
             }, duration, function() {
-//                window.location.href = url;
+                window.location.href = url;
             });
 
             $(".contentcolumn").load(url + " .content", function() {
@@ -105,7 +107,7 @@
             });
 
             $(".navcolumn").show().children().animate({
-                width: '24.2%'
+                width: '24.1%'
             }, duration);
 
             // doesn't put this link in the browser history
