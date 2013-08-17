@@ -31,7 +31,8 @@
         </div>
 
         <ul class="navcolumn">
-            <?php go_child_menu(); ?>
+            <!--            --><?php //go_child_menu(); ?>
+            <li><a href="team-moabit">Team</a></li><li><a href="praxis-moabit">Praxis</a></li><li><a href="leistungen-moabit">Leistungen</a></li><li><a href="anfahrt-moabit">Anfahrt</a></li>
         </ul>
     </section>
 
@@ -64,14 +65,14 @@
             </div>
         </div>
         <div class="contentcolumn">
-<!--            <div class="content">-->
-                <?php //get_page_content(); ?>
-<!--            </div>-->
+            <!--            <div class="content">-->
+            <?php //get_page_content(); ?>
+            <!--            </div>-->
         </div>
     </section>
 
     <section class="footer">
-        <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
+        <!--        <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>-->
     </section>
 </div>
 
@@ -79,8 +80,9 @@
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
-<script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
-<!--<script src="--><?php //get_theme_url(); ?><!--/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>-->
+<!--<script src="--><?php //get_theme_url(); ?><!--/js/foundation/foundation.js"></script>-->
+<!--<script src="-->
+<?php //get_theme_url(); ?><!--/js/jquery.cycle.lite.js" type="text/javascript" charset="utf-8"></script>-->
 <script>
     $(function () {
         $(".mainrow").hide();
@@ -88,7 +90,6 @@
         $(".navcolumn").hide();
         $(".address").click(function (e) {
             e.preventDefault();
-            // var url = "<?php // get_site_url(); ?>team";
             var url = this.href;
             var duration = 1000;
 
@@ -98,11 +99,11 @@
             $(".logoblock").animate({
                 marginLeft: '0',
                 marginRight: '0'
-            }, duration, function() {
+            }, duration, function () {
                 window.location.href = url;
             });
 
-            $(".contentcolumn").load(url + " .content", function() {
+            $(".contentcolumn").load(url + " .content", function () {
                 $(".sdl, .cnt").slideDown(duration);
             });
 
