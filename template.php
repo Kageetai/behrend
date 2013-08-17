@@ -26,7 +26,7 @@
     <section class="header">
         <div class="logoblock">
             <a href="<?php get_site_url(); ?>">
-                <h1 class="logo"><?php get_component('address-'.get_parent(false)); ?></h1>
+                <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?> Wolfgang Behrend</h1>
             </a>
         </div>
 
