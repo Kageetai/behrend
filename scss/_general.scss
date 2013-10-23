@@ -1,13 +1,23 @@
-//#header
-//  height: emCalc(100px)
-
-.header {
-  height: emCalc(80px);
+ul {
+  li {
+    list-style: none;
+  }
 }
 
-.logoblock {
-  height: 100%;
+.row,
+.content,
+.openingtimes,
+.contact {
+  margin-bottom: 1em;
 }
+
+//.header {
+//  height: emCalc(80px);
+//}
+
+//.logoblock {
+//  height: 100%;
+//}
 
 .logo {
   height: 100%;
@@ -31,7 +41,7 @@
   background-color: $panel-bg-dark;
 }
 
-.navcolumn {
+.nav {
   margin: 0;
   height: 100%;
   & > li {
@@ -62,7 +72,7 @@
 .contact,
 .content {
   padding: 1em;
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
 }
 
 .address {
@@ -92,9 +102,6 @@
   height: emCalc(250px);
   float: left;
 }
-
-//#wrapper
-//  margin-top: 1em
 
 .webmaster {
   margin: 1em 0;

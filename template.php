@@ -23,26 +23,37 @@
 
 <div id="wrapper">
 
-    <section class="header">
-        <div class="logoblock">
-            <a href="<?php get_site_url(); ?>">
-                <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?> Wolfgang Behrend</h1>
-            </a>
+    <section class="header row">
+        <div class="large-8 push-4 columns">
+            <a href="#" data-dropdown="dropdown-nav">Has Dropdown</a>
+            <ul id="dropdown-nav" class="nav f-dropdown" data-dropdown-content>
+                <?php go_child_menu(); ?>
+            </ul>
         </div>
 
-        <ul class="navcolumn">
-            <?php go_child_menu(); ?>
-        </ul>
+        <div class="large-4 pull-8 columns">
+            <div class="logoblock">
+                <a href="<?php get_site_url(); ?>">
+                    <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?> Wolfgang Behrend</h1>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="mainrow sdl">
-        <div class='gallerycolumn'>
+    <section class="row hide-for-small">
+        <div class="small-12 columns">
             <?php include('slides.inc.php'); ?>
         </div>
     </section>
 
-    <section class="mainrow cnt">
-        <div class="contactcolumn">
+    <section class="row">
+        <div class="large-8 push-4 columns">
+            <div class="content">
+                <?php get_page_content(); ?>
+            </div>
+        </div>
+
+        <div class="large-4 pull-8 columns">
             <div class="openingtimes">
                 <?php get_component('sprechzeiten'); ?>
             </div>
@@ -50,28 +61,29 @@
                 <?php get_component('contact'); ?>
             </div>
         </div>
-        <div class="contentcolumn">
-            <div class="content">
-                <?php get_page_content(); ?>
-            </div>
-        </div>
     </section>
 
-    <section class="footer">
-        <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
+    <section class="footer row">
+        <div class="small-12 columns"><div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div></div>
     </section>
 </div>
 
 <?php get_footer(); ?>
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
-<!--<script src="--><?php //get_theme_url(); ?><!--/js/foundation/foundation.js"></script>-->
+<!--<script>-->
+<!--    document.write('<script src=--><?php //get_theme_url(); ?><!--/js/vendor/'-->
+<!--        + ('__proto__' in {} ? 'zepto' : 'jquery')-->
+<!--        + '.js><\/script>');-->
+<!--</script>-->
+<script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
+<script src="<?php get_theme_url(); ?>/js/foundation/foundation.dropdown.js"></script>
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle2.carousel.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        $(".navcolumn").show().children().css({
+        $(document).foundation();
+        $(".nav").show().children().css({
             width: '24.1%'
         });
     });

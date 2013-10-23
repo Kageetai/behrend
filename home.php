@@ -23,39 +23,52 @@
 
 <div id="wrapper">
 
-    <section class="header index">
-        <div class="logoblock">
-            <a href="<?php get_site_url(); ?>">
-                <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
-            </a>
+    <section class="header index row">
+        <div class="large-8 push-4 columns">
+            <ul class="nav">
+                <li><a href="team-moabit">Team</a></li>
+                <li><a href="praxis-moabit">Praxis</a></li>
+                <li><a href="leistungen-moabit">Leistungen</a></li>
+                <li><a href="anfahrt-moabit">Anfahrt</a></li>
+            </ul>
         </div>
 
-        <ul class="navcolumn">
-            <li><a href="team-moabit">Team</a></li><li><a href="praxis-moabit">Praxis</a></li><li><a href="leistungen-moabit">Leistungen</a></li><li><a href="anfahrt-moabit">Anfahrt</a></li>
-        </ul>
+        <div class="large-4 pull-8 small-centered columns">
+            <div class="logoblock">
+                <a href="<?php get_site_url(); ?>">
+                    <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="mainrow addr">
-        <div class="addresscolumn">
+    <section class="row addr">
+        <div class="small-12 large-6 columns">
             <a class="address" href="<?php get_site_url(); ?>team-moabit">
                 <?php get_component('address-moabit'); ?>
             </a>
         </div>
-        <div class="addresscolumn">
+        <div class="small-12 large-6 columns">
             <a class="address" href="<?php get_site_url(); ?>team-wittstock">
                 <?php get_component('address-wittstock'); ?>
             </a>
         </div>
     </section>
 
-    <section class="mainrow sdl">
-        <div class='gallerycolumn'>
+    <section class="row hide-for-small">
+        <div class="small-12 columns">
             <?php include('slides.inc.php'); ?>
         </div>
     </section>
 
-    <section class="mainrow cnt">
-        <div class="contactcolumn">
+    <section class="row">
+        <div class="large-8 push-4 columns">
+            <div class="content">
+                <?php get_page_content(); ?>
+            </div>
+        </div>
+
+        <div class="large-4 pull-8 columns">
             <div class="openingtimes">
                 <?php get_component('sprechzeiten'); ?>
             </div>
@@ -63,15 +76,12 @@
                 <?php get_component('contact'); ?>
             </div>
         </div>
-        <div class="contentcolumn">
-            <!--            <div class="content">-->
-            <?php //get_page_content(); ?>
-            <!--            </div>-->
-        </div>
     </section>
 
-    <section class="footer">
-        <!--        <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>-->
+    <section class="footer row">
+        <div class="small-12 columns">
+            <div class="webmaster">Webmaster <a href="http://Kageetai.net">Kageetai.net</a></div>
+        </div>
     </section>
 </div>
 
