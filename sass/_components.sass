@@ -10,7 +10,7 @@
 .logo
   height: 100%
   padding: 0.5em
-  padding-left: emCalc(70px)
+  padding-left: 62px
   margin: 0
   background: $primary-color url(../img/logo.png) no-repeat 10px 4px
   color: white
@@ -18,11 +18,13 @@
 
 .address,
 .gallery,
-.openingtimes,
 .contact,
-.slides,
 .content
-  background-color: lightgray
+  background-color: $panel-bg-light
+
+.slidesholder,
+.openingtimes
+  background-color: $panel-bg-dark
 
 .navcolumn
   margin: 0
@@ -42,9 +44,15 @@
       color: white
 
 .openingtimes,
+.contact
+  color: white
+  font-size: 1.2em
+
+.openingtimes,
 .contact,
 .content
   padding: 1em
+  margin-bottom: 1em
 
 .address
   display: block
@@ -53,17 +61,20 @@
   font-size: emCalc(24px)
   cursor: pointer
 
+.slidesholder
+  padding: emCalc(10px) 0
+
 .gallery,
 .slides
-  height: emCalc(260px)
+  padding: emCalc(5px) auto
+  //height: emCalc(260px)
   overflow: hidden
-  padding: emCalc(5px) 0
   &:after
     clear: both
 
 .slide,
 .slide > img
-  max-height: emCalc(250px)
+  height: emCalc(250px)
   float: left
 
 //#wrapper
