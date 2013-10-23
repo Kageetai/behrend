@@ -25,8 +25,11 @@
 
     <section class="header row">
         <div class="large-8 push-4 columns">
-            <a href="#" data-dropdown="dropdown-nav">Has Dropdown</a>
-            <ul id="dropdown-nav" class="nav f-dropdown" data-dropdown-content>
+            <a href="#" class="dropdown-nav-dropper hide-for-large" data-dropdown="dropdown-nav">=</a>
+            <ul id="dropdown-nav" class="nav f-dropdown hide-for-large" data-dropdown-content>
+                <?php go_child_menu(); ?>
+            </ul>
+            <ul class="nav hide-for-small">
                 <?php go_child_menu(); ?>
             </ul>
         </div>
@@ -34,7 +37,7 @@
         <div class="large-4 pull-8 columns">
             <div class="logoblock">
                 <a href="<?php get_site_url(); ?>">
-                    <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?> Wolfgang Behrend</h1>
+                    <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?><br />Wolfgang Behrend</h1>
                 </a>
             </div>
         </div>

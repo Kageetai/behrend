@@ -4,6 +4,10 @@ ul {
   }
 }
 
+a {
+  color: darken($primary-color, 10%);
+}
+
 .row,
 .content,
 .openingtimes,
@@ -24,9 +28,11 @@ ul {
   padding: 0.5em;
   padding-left: 62px;
   margin: 0;
-  background: $primary-color url(../img/logo.png) no-repeat 10px 4px;
+  background: $primary-color url(../img/logo.png) no-repeat 10px center;
   color: white;
   line-height: 1.7em;
+  min-height: 85px;
+  font-size: 1.2em;
 }
 
 .address,
@@ -41,16 +47,28 @@ ul {
   background-color: $panel-bg-dark;
 }
 
+.dropdown-nav-dropper {
+  display: block;
+  float: right;
+  line-height: 1.2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  //margin: 0.2em;
+  color: darkgray;
+}
+
 .nav {
   margin: 0;
-  height: 100%;
+  height: auto;
+  padding: 0.5em;
+
   & > li {
     display: inline-block;
     background-color: #d30e62;
     height: 100%;
     text-align: center;
     margin-right: emCalc(7px);
-    height: emCalc(80px);
+    //height: emCalc(80px);
     line-height: emCalc(80px);
     &:last-child {
       margin-right: 0;
@@ -60,6 +78,28 @@ ul {
       color: white;
     }
   }
+
+  &.f-dropdown {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+
+    &:before {
+      border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent;
+      right: 10px;
+      left: auto;
+    }
+
+    &:after {
+      right: 9px;
+      left: auto;
+    }
+
+    li:hover,
+    li:focus {
+      background-color: darken(#d30e62, 5%);
+    }
+  }
+
 }
 
 .openingtimes,
@@ -90,7 +130,6 @@ ul {
 .gallery,
 .slides {
   padding: emCalc(5px) auto;
-  //height: emCalc(260px)
   overflow: hidden;
   &:after {
     clear: both;
@@ -107,4 +146,14 @@ ul {
   margin: 1em 0;
   text-align: right;
   font-size: emCalc(10px);
+}
+
+.content {
+  li {
+    margin-bottom: 2em;
+
+    img {
+      max-width: 17%;
+    }
+  }
 }
