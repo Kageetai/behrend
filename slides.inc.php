@@ -1,12 +1,17 @@
-<div class="slides">
-	<?php
-//	$dir = 'data/uploads/slides/'.get_page_slug(false).'/';
-	$dir = 'data/uploads/slides/';
-	$files = glob(preg_replace('/(\*|\?|\[)/', '[$1]', $dir).'*.jpg');
-	foreach ($files as $filename) { ?>
-<!--	    <div class="slide" style="background-image: url(--><?php //echo get_site_url(false).$filename; ?><!--); background-size: cover; background-position: center;">&nbsp;</div>-->
-	    <div class="slide">
-            <img src="<?php echo get_site_url(false).$filename; ?>" alt="slide" />
-	    </div>
-	<?php } ?>
+<div class="slidesholder">
+    <div class="slides cycle-slideshow"
+         data-cycle-fx="carousel"
+         data-cycle-timeout="1000"
+         data-cycle-speed="5000"
+         data-cycle-carousel-visible="3"
+         data-cycle-carousel-fluid="true">
+        <?php
+        //	$dir = 'data/uploads/slides/'.get_page_slug(false).'/';
+        $dir = 'data/uploads/slides/';
+        $files = glob(preg_replace('/(\*|\?|\[)/', '[$1]', $dir) . '*.jpg');
+        foreach ($files as $filename) {
+            ?>
+            <img src="<?php echo get_site_url(false) . $filename; ?>" alt="slide" class="slide"/>
+        <?php } ?>
+    </div>
 </div>
