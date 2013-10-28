@@ -10,8 +10,7 @@ a {
 
 .row,
 .content,
-.openingtimes,
-.contact {
+.openingtimes {
   margin-bottom: 1em;
 }
 
@@ -19,19 +18,15 @@ a {
 //  height: emCalc(80px);
 //}
 
-//.logoblock {
-//  height: 100%;
-//}
-
 .logo {
-  height: 100%;
+  //height: 100%;
   padding: 0.5em;
   padding-left: 62px;
   margin: 0;
   background: $primary-color url(../img/logo.png) no-repeat 10px center;
   color: white;
   line-height: 1.7em;
-  min-height: 85px;
+  min-height: emCalc(85px);
   font-size: 1.2em;
 }
 
@@ -121,6 +116,7 @@ a {
   color: white;
   font-size: emCalc(24px);
   cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
 .slidesholder {
@@ -143,7 +139,7 @@ a {
 }
 
 .webmaster {
-  margin: 1em 0;
+  //margin: 1em 0;
   text-align: right;
   font-size: emCalc(10px);
 }
