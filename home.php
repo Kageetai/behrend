@@ -24,7 +24,7 @@
 <div id="wrapper">
 
     <section class="header index row">
-        <div class="large-8 push-4 columns">
+        <div class="large-8 push-4 hide-for-small columns">
             <ul class="nav">
                 <li><a href="team-moabit">Team</a></li>
                 <li><a href="praxis-moabit">Praxis</a></li>
@@ -33,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="large-4 pull-8 small-centered columns">
+        <div class="large-4 pull-8 columns">
             <div class="logoblock">
                 <a href="<?php get_site_url(); ?>">
                     <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <section class="row">
+    <section class="row mainrow">
         <div class="large-8 push-4 columns">
             <div class="content">
                 <?php get_page_content(); ?>
