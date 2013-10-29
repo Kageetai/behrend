@@ -85,26 +85,26 @@ a {
     }
 
     display: inline-block;
-    background-color: #d30e62;
+    background-color: $nav-pink;
     height: 100%;
     text-align: center;
     line-height: 85px;
 
     &:nth-child(2) {
-      background-color: lighten(#d30e62, 5%);
+      background-color: lighten($nav-pink, 5%);
     }
 
     &:nth-child(3) {
-      background-color: lighten(#d30e62, 10%);
+      background-color: lighten($nav-pink, 10%);
     }
 
     &:last-child {
       margin-right: 0;
-      background-color: lighten(#d30e62, 15%);
+      background-color: lighten($nav-pink, 15%);
     }
 
     &:hover {
-      background-color: darken(#d30e62, 5%);
+      background-color: darken($nav-pink, 5%);
     }
 
     a {
@@ -131,7 +131,7 @@ a {
 
     li:hover,
     li:focus {
-      background-color: darken(#d30e62, 5%);
+      background-color: darken($nav-pink, 5%);
     }
   }
 
