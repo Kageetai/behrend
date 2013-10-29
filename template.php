@@ -25,8 +25,8 @@
 
     <section class="header row">
         <div class="large-8 push-4 columns">
-            <a href="#" class="dropdown-nav-dropper hide-for-large" data-dropdown="dropdown-nav">=</a>
-            <ul id="dropdown-nav" class="nav f-dropdown hide-for-large" data-dropdown-content>
+            <a href="#" class="dropdown-nav-dropper hide-for-medium-up" data-dropdown="dropdown-nav">=</a>
+            <ul id="dropdown-nav" class="nav f-dropdown hide-for-medium-up" data-dropdown-content>
                 <?php go_child_menu(); ?>
             </ul>
             <ul class="nav hide-for-small">
@@ -35,21 +35,21 @@
         </div>
 
         <div class="large-4 pull-8 columns">
-            <div class="logoblock">
+            <div class="logo">
                 <a href="<?php get_site_url(); ?>">
-                    <h1 class="logo">Zahnarztpraxis <?= ucfirst(get_parent(false)); ?><br />Wolfgang Behrend</h1>
+                    <h1>Zahnarztpraxis <?= ucfirst(get_parent(false)); ?><br />Wolfgang Behrend</h1>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="row hide-for-small">
+    <section class="row hide-for-small galleryrow">
         <div class="small-12 columns">
             <?php include('slides.inc.php'); ?>
         </div>
     </section>
 
-    <section class="row">
+    <section class="row mainrow">
         <div class="large-8 push-4 columns">
             <div class="content">
                 <?php get_page_content(); ?>
@@ -86,9 +86,10 @@
 <script>
     $(function () {
         $(document).foundation();
-        $(".nav").show().children().css({
-            width: '24.1%'
-        });
+
+//        $(".nav").children().css({
+//            width: '24%'
+//        });
     });
 </script>
 </body>

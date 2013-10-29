@@ -1,3 +1,8 @@
+body {
+  padding-top: 1em;
+  height: 100%;
+}
+
 ul {
   li {
     list-style: none;
@@ -13,21 +18,30 @@ a {
 .openingtimes {
   margin-bottom: 1em;
 }
-
-//.header {
-//  height: emCalc(80px);
-//}
-
 .logo {
-  //height: 100%;
+  //width: 300px;
   padding: 0.5em;
   padding-left: 62px;
   margin: 0;
   background: $primary-color url(../img/logo.png) no-repeat 10px center;
-  color: white;
-  line-height: 1.7em;
-  min-height: emCalc(85px);
-  font-size: 1.2em;
+  min-height: 85px;
+
+  h1 {
+    color: white;
+    line-height: 1.55em;
+    font-size: 1.2em;
+  }
+
+  .index & {
+    margin-bottom: 5em;
+  }
+
+  #team-wittstock &,
+  #praxis-wittstock &,
+  #leistungen-wittstock &,
+  #anfahrt-wittstock & {
+    line-height: 1.15em;
+  }
 }
 
 .address,
@@ -48,26 +62,51 @@ a {
   line-height: 1.2em;
   font-size: 2.5em;
   font-weight: bold;
-  //margin: 0.2em;
   color: darkgray;
 }
 
 .nav {
   margin: 0;
   height: auto;
-  padding: 0.5em;
+  //padding: 0.5em;
 
   & > li {
+    width: 49%;
+     &:nth-child(2n) {
+       margin-left: emCalc(7px);
+     }
+
+    @media #{$small} {
+      & {
+        width: 24%;
+        margin-right: emCalc(7px);
+        margin-left: 0 !important;
+      }
+    }
+
     display: inline-block;
     background-color: #d30e62;
     height: 100%;
     text-align: center;
-    margin-right: emCalc(7px);
-    //height: emCalc(80px);
-    line-height: emCalc(80px);
+    line-height: 85px;
+
+    &:nth-child(2) {
+      background-color: lighten(#d30e62, 5%);
+    }
+
+    &:nth-child(3) {
+      background-color: lighten(#d30e62, 10%);
+    }
+
     &:last-child {
       margin-right: 0;
+      background-color: lighten(#d30e62, 15%);
     }
+
+    &:hover {
+      background-color: darken(#d30e62, 5%);
+    }
+
     a {
       font-size: emCalc(18px);
       color: white;
@@ -76,6 +115,7 @@ a {
 
   &.f-dropdown {
     background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
     border: none;
 
     &:before {
@@ -107,7 +147,6 @@ a {
 .contact,
 .content {
   padding: 1em;
-  //margin-bottom: 1em;
 }
 
 .address {
@@ -139,12 +178,12 @@ a {
 }
 
 .webmaster {
-  //margin: 1em 0;
   text-align: right;
   font-size: emCalc(10px);
 }
 
-.content {
+#index .content,
+#team-moabit .content {
   li {
     margin-bottom: 2em;
 

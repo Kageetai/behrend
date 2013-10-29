@@ -24,21 +24,21 @@
 <div id="wrapper">
 
     <section class="header index row">
-        <div class="large-8 push-4 hide-for-small columns">
-            <ul class="nav">
-                <li><a href="team-moabit">Team</a></li>
-                <li><a href="praxis-moabit">Praxis</a></li>
-                <li><a href="leistungen-moabit">Leistungen</a></li>
-                <li><a href="anfahrt-moabit">Anfahrt</a></li>
-            </ul>
-        </div>
-
-        <div class="large-4 pull-8 columns">
-            <div class="logoblock">
+        <div class="large-4 columns" style="width: 300px; left: 50%; margin-left: -150px; float: left;">
+            <div class="logo">
                 <a href="<?php get_site_url(); ?>">
-                    <h1 class="logo">Zahnarztpraxis Wolfgang Behrend</h1>
+                    <h1>Zahnarztpraxis<br />Wolfgang Behrend</h1>
                 </a>
             </div>
+        </div>
+
+        <div class="large-8 columns">
+            <ul class="nav">
+                <li><a href="team-">Team</a></li>
+                <li><a href="praxis-">Praxis</a></li>
+                <li><a href="leistungen-">Leistungen</a></li>
+                <li><a href="anfahrt-">Anfahrt</a></li>
+            </ul>
         </div>
     </section>
 
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <section class="row hide-for-small">
+    <section class="row galleryrow">
         <div class="small-12 columns">
             <?php include('slides.inc.php'); ?>
         </div>
@@ -89,42 +89,65 @@
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
-<!--<script src="--><?php //get_theme_url(); ?><!--/js/foundation/foundation.js"></script>-->
+<script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
+<script src="<?php get_theme_url(); ?>/js/jquery.cycle2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?php get_theme_url(); ?>/js/jquery.cycle2.carousel.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
+        $(document).foundation();
+
+        $("body").height($(window).height());
+        //hide elements before the animation
+        $(".nav").hide().children().css("width", "0");
+        $(".galleryrow").hide();
         $(".mainrow").hide();
-        $(".mainrow.addr").show();
-        $(".navcolumn").hide();
+
         $(".address").click(function (e) {
-            e.preventDefault();
-            var url = this.href;
-            var duration = 1000;
+            //only do the animation of not on mobile
+            if($(window).width() > 768) {
+                e.preventDefault();
+                var url = this.href;
+                var location = url.split(/[\s-]+/).pop();
+                var duration = 1000;
 
-            $(".mainrow.addr").remove();
-            $(".header").removeClass("index");
+                $(".header").removeClass("index");
+                $(".row.addr").remove();
 
-            $(".logoblock").animate({
-                marginLeft: '0',
-                marginRight: '0'
-            }, duration, function () {
-                window.location.href = url;
-            });
+                $(".logo h1").text("Zahnarztpraxis "+capitalise(location)+" Wolfgang Behrend")
+                    .filter(function () {
+                        return location == "wittstock";
+                    })
+                    .css("margin-bottom", "0.2em")
+                    .css("line-height", "1.115em");
 
-            $(".contentcolumn").load(url + " .content", function () {
-                $(".sdl, .cnt").slideDown(duration);
-            });
+                $(".content").parent().load(url + " .content", function () {
+                    $(".galleryrow").slideDown(duration);
+                    $(".mainrow").slideDown(duration);
+                });
 
-            $(".navcolumn").show().children().animate({
-                width: '24.1%'
-            }, duration);
-
-            // doesn't put this link in the browser history
-//            $(location).attr('href', url);
-
-            // simulate user clicking link
-//            window.location.href = url;
+                $(".logo").parent().removeClass("large-centered")
+                    .animate({
+//                    marginLeft: '0',
+//                    marginRight: '0'
+                    left: "0",
+                    marginLeft: "0"
+                }, duration/2, function () {
+                    $(".nav").show().children().animate({
+                        width: '23.5%'
+                    }, duration/2)
+                    .children().attr("href", function() {
+                        return $(this).text().toLowerCase() + "-" + location;
+                    });
+//                    window.location.href = url;
+                });
+            }
         });
     });
+
+    function capitalise(string)
+    {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 </script>
 
 </body>
