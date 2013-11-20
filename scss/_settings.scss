@@ -56,7 +56,7 @@ $nav-pink: #d30e62;
 
 // Make sure border radius matches unless we want it different.
 
-$global-radius: 5px;
+//$global-radius: 5px;
 
 // $global-rounded: 1000px;
 
@@ -94,7 +94,7 @@ $global-radius: 5px;
 
 // Media Queries
 
-$small-screen: emCalc(768px);
+$small-screen: emCalc(981px);
 $medium-screen: emCalc(1280px);
 $large-screen: emCalc(1440px);
 

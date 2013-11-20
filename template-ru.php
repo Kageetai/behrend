@@ -6,7 +6,7 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9" lang="de"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="de"> <!--<![endif]-->
+<html class="no-js" lang="ru"> <!--<![endif]-->
 
 <head>
     <title><?php get_site_name(); ?> - <?php get_page_clean_title(); ?></title>
@@ -25,7 +25,7 @@
 
     <section class="header row">
         <div class="large-8 push-4 columns">
-            <a href="#" class="dropdown-nav-dropper hide-for-medium-up" data-dropdown="dropdown-nav"><img src="<?php get_theme_url(); ?>/img/menu.png" alt="dropdown"/></a>
+            <a href="#" class="dropdown-nav-dropper hide-for-medium-up" data-dropdown="dropdown-nav">=</a>
             <ul id="dropdown-nav" class="nav f-dropdown hide-for-medium-up" data-dropdown-content>
                 <?php go_child_menu(); ?>
             </ul>
@@ -58,10 +58,10 @@
 
         <div class="large-4 pull-8 columns">
             <div class="openingtimes">
-                <?php get_component('sprechzeiten-de'); ?>
+                <?php get_component('sprechzeiten-ru'); ?>
             </div>
             <div class="contact">
-                <?php get_component('contact-de'); ?>
+                <?php get_component('contact-ru'); ?>
             </div>
         </div>
     </section>

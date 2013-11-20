@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <!--[if IE 8]>
-<html class="no-js lt-ie9" lang="de"> <![endif]-->
+<html class="no-js lt-ie9" lang="ru"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="de"> <!--<![endif]-->
 
@@ -42,15 +42,26 @@
         </div>
     </section>
 
+    <section class="row lang">
+        <div class="small-12 large-6 columns">
+            <div class="language">
+                <ul>
+                    <li><a href="index">Deutsch</a></li>
+                    <li><a href="index-ru">Russisch</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section class="row addr">
         <div class="small-12 large-6 columns">
-            <a class="address" href="<?php get_site_url(); ?>team-moabit">
-                <?php get_component('address-moabit'); ?>
+            <a class="address" href="<?php get_site_url(); ?>team-moabit-ru">
+                <?php get_component('address-moabit-ru'); ?>
             </a>
         </div>
         <div class="small-12 large-6 columns">
-            <a class="address" href="<?php get_site_url(); ?>team-wittstock">
-                <?php get_component('address-wittstock'); ?>
+            <a class="address" href="<?php get_site_url(); ?>team-wittstock-ru">
+                <?php get_component('address-wittstock-ru'); ?>
             </a>
         </div>
     </section>
@@ -70,10 +81,10 @@
 
         <div class="large-4 pull-8 columns">
             <div class="openingtimes">
-                <?php get_component('sprechzeiten'); ?>
+                <?php get_component('sprechzeiten-ru'); ?>
             </div>
             <div class="contact">
-                <?php get_component('contact'); ?>
+                <?php get_component('contact-ru'); ?>
             </div>
         </div>
     </section>
@@ -87,7 +98,6 @@
 
 <?php get_footer(); ?>
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
 <script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -101,13 +111,16 @@
         $(".nav").hide().children().css("width", "0");
         $(".galleryrow").hide();
         $(".mainrow").hide();
+        $(".lang").hide();
 
         $(".address").click(function (e) {
             //only do the animation of not on mobile
             if($(window).width() > 768) {
                 e.preventDefault();
+                $("body").height("100%");
                 var url = this.href;
-                var location = url.split(/[\s-]+/).pop();
+                var location = url.split(/[\s-]+/)[1];
+                var language = url.split(/[\s-]+/)[2];
                 var duration = 1000;
 
                 $(".header").removeClass("index");
@@ -127,19 +140,17 @@
 
                 $(".logo").parent().removeClass("large-centered")
                     .animate({
-//                    marginLeft: '0',
-//                    marginRight: '0'
-                    left: "0",
-                    marginLeft: "0"
-                }, duration/2, function () {
-                    $(".nav").show().children().animate({
-                        width: '23.5%'
-                    }, duration/2)
-                    .children().attr("href", function() {
-                        return $(this).text().toLowerCase() + "-" + location;
-                    });
+                        left: "0",
+                        marginLeft: "0"
+                    }, duration/2, function () {
+                        $(".nav").show().children().animate({
+                            width: '23.5%'
+                        }, duration/2)
+                            .children().attr("href", function() {
+                                return $(this).text().toLowerCase() + "-" + location + "-" + language;
+                            });
 //                    window.location.href = url;
-                });
+                    });
             }
         });
     });

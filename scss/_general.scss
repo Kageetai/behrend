@@ -1,6 +1,7 @@
 body {
   padding-top: 1em;
   height: 100%;
+  overflow-y: scroll;
 }
 
 ul {
@@ -30,18 +31,23 @@ a {
     color: white;
     line-height: 1.55em;
     font-size: 1.2em;
+
+    body[id*='-wittstock-'] & {
+      margin-bottom: 0.2em;
+      line-height: 1.115em;
+    }
   }
 
   .index & {
     margin-bottom: 5em;
   }
 
-  #team-wittstock &,
-  #praxis-wittstock &,
-  #leistungen-wittstock &,
-  #anfahrt-wittstock & {
-    line-height: 1.15em;
-  }
+  //#team-wittstock &,
+  //#praxis-wittstock &,
+  //#leistungen-wittstock &,
+  //#anfahrt-wittstock & {
+  //  line-height: 1.15em;
+  //}
 }
 
 .address,
@@ -183,7 +189,9 @@ a {
 }
 
 #index .content,
-#team-moabit .content {
+#index-ru .content,
+#team-moabit-de .content,
+#team-moabit-ru .content {
   li {
     margin-bottom: 2em;
 
