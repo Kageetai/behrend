@@ -168,20 +168,20 @@ a {
   padding: emCalc(10px) 0;
 }
 
-.gallery,
-.slides {
-  padding: emCalc(5px) auto;
-  overflow: hidden;
-  &:after {
-    clear: both;
-  }
-}
+//.gallery,
+//.slides {
+  //padding: emCalc(5px) 0;
+  //overflow: hidden;
+  //&:after {
+  //  clear: both;
+  //}
+//}
 
-.slide,
-.slide > img {
-  height: emCalc(250px);
-  float: left;
-}
+//.slide,
+//.slide > img {
+  //height: emCalc(250px);
+  //float: left;
+//}
 
 .webmaster {
   text-align: right;
