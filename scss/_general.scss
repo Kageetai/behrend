@@ -24,7 +24,7 @@ a {
   padding: 0.5em;
   padding-left: 62px;
   margin: 0;
-  background: $primary-color url(../img/logo.png) no-repeat 10px center;
+  background: $primary-color url(../img/tooth.png) no-repeat 10px center;
   min-height: 85px;
 
   h1 {
@@ -198,5 +198,41 @@ a {
     img {
       max-width: 17%;
     }
+  }
+}
+
+.language {
+  .button {
+    background-color: $panel-bg-dark;
+    width: 100%;
+  }
+
+  .german {
+    background: url(../img/flagge_de.png) no-repeat top 0.5em left 0.5em;
+    background-size: 1em;
+  }
+
+  .russian {
+    background: url(../img/flagge_ru.png) no-repeat top 0.5em left 0.5em;
+    background-size: 1em;
+  }
+
+  a {
+    color: white;
+    padding-left: 2em !important;
+  }
+
+  ul {
+    margin: 0;
+  }
+}
+
+#language-dropdown {
+  background-color: $panel-bg-light;
+  box-shadow: 1px 1px 5px #222;
+
+  &.f-dropdown:before {
+    border-color: transparent transparent $panel-bg-light transparent;
+
   }
 }

@@ -321,13 +321,13 @@ $portrait: "only screen and (orientation: portrait)";
 
 // Various hover effects.
 
-// $button-function-factor: 10%;
+$button-function-factor: 10%;
 
 // Button border styles.
 
-// $button-border-width: 1px;
-// $button-border-style: solid;
-// $button-border-color: darken($primary-color, $button-function-factor);
+$button-border-width: 0;
+$button-border-style: solid;
+$button-border-color: darken($primary-color, $button-function-factor);
 
 // Radius used throughout the core.
 
@@ -343,7 +343,7 @@ $portrait: "only screen and (orientation: portrait)";
 
 // Color of the pip in dropdown buttons
 
-// $dropdown-button-pip-color: #fff;
+//$dropdown-button-pip-color: $panel-bg-light;
 // $dropdown-button-pip-color-alt: #333;
 
 // Tiny dropdown buttons

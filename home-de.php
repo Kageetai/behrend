@@ -27,7 +27,7 @@
         <div class="large-4 columns" style="width: 300px; left: 50%; margin-left: -150px; float: left;">
             <div class="logo">
                 <a href="<?php get_site_url(); ?>">
-                    <h1>Zahnarztpraxis<br />Wolfgang Behrend</h1>
+                    <h1>Zahnarztpraxis<br/>Wolfgang Behrend</h1>
                 </a>
             </div>
         </div>
@@ -43,11 +43,12 @@
     </section>
 
     <section class="row lang">
-        <div class="small-12 large-6 columns">
+        <div class="small-3 small-centered columns">
             <div class="language">
-                <ul>
-                    <li><a href="index">Deutsch</a></li>
-                    <li><a href="index-ru">Russisch</a></li>
+                <a href="#" data-dropdown="language-dropdown" class="button small dropdown">Sprache</a>
+                <ul id="language-dropdown" class="f-dropdown">
+                    <li><a href="index" class="german">Deutsch</a></li>
+                    <li><a href="index-ru" class="russian">Russisch</a></li>
                 </ul>
             </div>
         </div>
@@ -100,6 +101,7 @@
 
 <script src="<?php get_theme_url(); ?>/js/jquery-1.9.1.min.js"></script>
 <script src="<?php get_theme_url(); ?>/js/foundation/foundation.js"></script>
+<script src="<?php get_theme_url(); ?>/js/foundation/foundation.dropdown.js"></script>
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="<?php get_theme_url(); ?>/js/jquery.cycle2.carousel.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
@@ -111,12 +113,12 @@
         $(".nav").hide().children().css("width", "0");
         $(".galleryrow").hide();
         $(".mainrow").hide();
-        $(".lang").hide();
 
         $(".address").click(function (e) {
             //only do the animation of not on mobile
-            if($(window).width() > 768) {
+            if ($(window).width() > 768) {
                 e.preventDefault();
+                $(".lang").hide();
                 $("body").height("100%");
                 var url = this.href;
                 var location = url.split(/[\s-]+/)[1];
@@ -126,7 +128,7 @@
                 $(".header").removeClass("index");
                 $(".row.addr").remove();
 
-                $(".logo h1").text("Zahnarztpraxis "+capitalise(location)+" Wolfgang Behrend")
+                $(".logo h1").text("Zahnarztpraxis " + capitalise(location) + " Wolfgang Behrend")
                     .filter(function () {
                         return location == "wittstock";
                     })
@@ -140,23 +142,22 @@
 
                 $(".logo").parent().removeClass("large-centered")
                     .animate({
-                    left: "0",
-                    marginLeft: "0"
-                }, duration/2, function () {
-                    $(".nav").show().children().animate({
-                        width: '23.5%'
-                    }, duration/2)
-                    .children().attr("href", function() {
-                        return $(this).text().toLowerCase() + "-" + location + "-" + language;
-                    });
+                        left: "0",
+                        marginLeft: "0"
+                    }, duration / 2, function () {
+                        $(".nav").show().children().animate({
+                            width: '23.5%'
+                        }, duration / 2)
+                            .children().attr("href", function () {
+                                return $(this).text().toLowerCase() + "-" + location + "-" + language;
+                            });
 //                    window.location.href = url;
-                });
+                    });
             }
         });
     });
 
-    function capitalise(string)
-    {
+    function capitalise(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 </script>
