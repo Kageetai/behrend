@@ -3,8 +3,8 @@
          data-cycle-fx="carousel"
          data-cycle-timeout="1000"
          data-cycle-speed="5000"
-         data-cycle-carousel-visible="3"
-         data-cycle-carousel-fluid="true">
+         data-cycle-carousel-visible="3.52"
+         data-cycle-carousel-fluid="false">
         <?php
         //	$dir = 'data/uploads/slides/'.get_page_slug(false).'/';
         $dir = 'data/uploads/slides/';

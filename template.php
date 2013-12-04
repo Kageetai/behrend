@@ -37,7 +37,11 @@
         <div class="large-4 pull-8 columns">
             <div class="logo">
                 <a href="<?php get_site_url(); ?>">
-                    <h1>Zahnarztpraxis <?= ucfirst(explode("-", get_parent(false))[0]); ?><br />Wolfgang Behrend</h1>
+                    <?php
+                        $array = explode("-", get_parent(false));
+                        $location = ucfirst($array[0]);
+                    ?>
+                    <h1>Zahnarztpraxis <?= $location ?><br />Wolfgang Behrend</h1>
                 </a>
             </div>
         </div>

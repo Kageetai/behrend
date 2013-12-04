@@ -123,6 +123,7 @@ a {
     background: rgba(0, 0, 0, 0.5);
     padding: 8px;
     border: none;
+    max-width: none !important;
 
     &:before {
       border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent;

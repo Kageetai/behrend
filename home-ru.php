@@ -43,7 +43,7 @@
     </section>
 
     <section class="row lang">
-        <div class="small-3 small-centered columns">
+        <div class="small-4 large-3 small-centered columns">
             <div class="language">
                 <a href="#" data-dropdown="language-dropdown" class="button small dropdown">Sprache</a>
                 <ul id="language-dropdown" class="f-dropdown">
@@ -56,12 +56,12 @@
 
     <section class="row addr">
         <div class="small-12 large-6 columns">
-            <a class="address" href="<?php get_site_url(); ?>team-moabit-ru">
+            <a class="address" href="<?php get_site_url(); ?>team-moabit-ru" data-location="moabit" data-language="ru">
                 <?php get_component('address-moabit-ru'); ?>
             </a>
         </div>
         <div class="small-12 large-6 columns">
-            <a class="address" href="<?php get_site_url(); ?>team-wittstock-ru">
+            <a class="address" href="<?php get_site_url(); ?>team-wittstock-ru" data-location="wittstock" data-language="ru">
                 <?php get_component('address-wittstock-ru'); ?>
             </a>
         </div>
@@ -108,7 +108,10 @@
     $(function () {
         $(document).foundation();
 
-        $("body").height($(window).height());
+//        $("body").height($(window).height());
+        $("body").css({
+            minHeight: $(window).height()
+        });
         //hide elements before the animation
         $(".nav").hide().children().css("width", "0");
         $(".galleryrow").hide();
@@ -116,13 +119,13 @@
 
         $(".address").click(function (e) {
             //only do the animation of not on mobile
-            if($(window).width() > 768) {
+            if($(window).width() >= 981) {
                 e.preventDefault();
                 $(".lang").hide();
-                $("body").height("100%");
+//                $("body").height("100%");
                 var url = this.href;
-                var location = url.split(/[\s-]+/)[1];
-                var language = url.split(/[\s-]+/)[2];
+                var location = $(this).data("location");
+                var language = $(this).data("language");
                 var duration = 1000;
 
                 $(".header").removeClass("index");
@@ -137,7 +140,8 @@
 
                 $(".content").parent().load(url + " .content", function () {
                     $(".galleryrow").slideDown(duration, function() {
-                        $(".slides").reinit();
+//                        $(".slides").reinit();
+//                        $("body").height("110%");
                     });
                     $(".mainrow").slideDown(duration);
                 });
